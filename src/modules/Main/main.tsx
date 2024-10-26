@@ -40,7 +40,7 @@ export const Main = () => {
   }, []);
 
   return (
-    <div className='w-full h-[700px] relative'>
+    <div className='w-full h-uiMinHeight relative'>
       <div className='text-4xl font-semibold'>
         {['I’m a web3.0 frontend developer', 'and game developer', 'telegram mini apps/dapps creator'].map((text, index) => (
           <h1 key={index} ref={(el) => (leftHeadings.current[index] = el)} style={{ marginLeft: `${index * 50}px` }}>

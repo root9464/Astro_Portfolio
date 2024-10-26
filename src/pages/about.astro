@@ -1,7 +1,8 @@
 ---
-import Layout from '@/layouts/_layout.astro'
+import Layout from '@/layouts/_layout.astro';
+import { AboutMe } from '@modules/About/about';
 ---
 
-<Layout title="About">
-	<h1>ffff</h1>
+<Layout title='About'>
+  <AboutMe client:load />
 </Layout>
