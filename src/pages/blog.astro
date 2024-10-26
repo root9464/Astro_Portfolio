@@ -70,9 +70,9 @@ const blogData = {
 
 <Layout title='Blog'>
   <BlogLink client:load />
-  <div class='w-full h-uiMinHeight flex flex-col items-center gap-y-10'>
+  <div class='w-full h-max flex flex-col items-center gap-y-10 lg:h-uiMinHeight'>
     <h2 class='text-4xl font-bold'>My company blog</h2>
-    <div class='w-10/12 h-max rounded-uiRounded py-7 px-8 border-2 border-uiNeutral'>
+    <div class='w-full h-max rounded-uiRounded py-7 px-8 border-2 border-uiNeutral md:w-10/12'>
       {blogData.introduction.map((text) => <p class='mb-4'>{text}</p>)}
 
       <ul class='list-disc list-inside pl-5 mb-4'>

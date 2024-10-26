@@ -27,6 +27,16 @@
   }
 }
 
+@layer utilities {
+  .smoothness {
+    @apply transition-all duration-300 ease-in-out
+  }
+}
+
+/* * {
+  border: #C0C2C7 1px solid;
+} */
+
 /* Ширина скроллбара */
 body::-webkit-scrollbar {
   background: #C0C2C7;

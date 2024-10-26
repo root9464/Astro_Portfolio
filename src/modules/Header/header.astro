@@ -1,5 +1,6 @@
 ---
 import { LogoGradient } from '@/assets/tsx/logo';
+import { DropdownMenuPages } from '../Menu/menu';
 
 const pages: Record<string, string> = {
   '/': 'Home',
@@ -14,10 +15,10 @@ const pages: Record<string, string> = {
 const currentPath = Astro.url.pathname;
 ---
 
-<header class='bg-transparent w-9/12 h-20 m-auto px-10 flex items-center justify-between rounded-bl-[30px] rounded-br-[30px]'>
+<header class='bg-transparent w-full h-20 m-auto px-10 flex items-center justify-between md:w-9/12'>
   <LogoGradient className='w-20 h-20' />
-
-  <nav class='w-min flex flex-row justify-between items-center space-x-4 text-xl font-medium gap-x-3'>
+  <DropdownMenuPages pages={pages} client:load />
+  <nav class='hidden md:flex w-min flex-row justify-between items-center space-x-4 text-xl font-medium gap-x-3'>
     {
       Object.entries(pages).map(([path, name]) => (
         <div class='group'>

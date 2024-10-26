@@ -3,15 +3,16 @@ import Layout from '@/layouts/_layout.astro';
 ---
 
 <Layout title='Home'>
-  <div class='w-full h-uiMinHeight flex flex-col items-center gap-y-10'>
+  <div class='w-full h-max flex flex-col items-center gap-y-10 md:h-uiMinHeight'>
     <h2 class='text-4xl font-bold'>If you need me — contact me.</h2>
-    <div class='max-w-[904px] h-max rounded-uiRounded py-7 px-8 border-2 border-uiNeutral grid grid-cols-2 gap-x-5'>
+    <div class='max-w-[904px] h-max rounded-uiRounded py-7 px-8 border-2 border-uiNeutral grid grid-cols-1 gap-x-5 md:grid-cols-2 gap-4'>
       <form action='' class='w-full flex flex-col gap-y-4 justify-between'>
-        <input type='text' placeholder='your name' />
-        <input type='email' placeholder='your email' />
-        <textarea placeholder='your message'></textarea>
-        <button type='submit'>Send</button>
+        <input type='text' placeholder='your name' class='rounded-[10px]' />
+        <input type='email' placeholder='your email' class='rounded-[10px]' />
+        <textarea placeholder='your message' class='rounded-[10px]'></textarea>
+        <button type='submit' class='rounded-[10px]'>Send</button>
       </form>
+
       <div class='w-full flex flex-col gap-y-4 space-3'>
         <p>
           I’m always excited to connect with fellow enthusiasts! If you have any questions, suggestions, or just want to chat, don’t hesitate to

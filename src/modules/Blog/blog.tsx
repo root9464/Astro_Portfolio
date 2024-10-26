@@ -9,8 +9,10 @@ export const BlogLink = () => {
   const handleClick = () => {
     setExpanded((prev) => !prev);
 
+    const widthValue = window.innerWidth < 768 ? '90%' : '30%';
+
     gsap.to(ref.current, {
-      width: expanded ? '204px' : '30%',
+      width: expanded ? '204px' : widthValue,
       duration: 0.5,
       ease: 'power2.out',
       onComplete: () => {
@@ -40,7 +42,8 @@ export const BlogLink = () => {
   return (
     <div
       ref={ref}
-      className='bg-uiPinkGradient w-[204px] h-12 px-4 flex flex-row items-center justify-between absolute right-0 bottom-1/2 cursor-pointer overflow-hidden rounded-[15px]'
+      className='bg-uiPinkGradient w-[204px] h-12 px-4 flex flex-row items-center justify-between relative cursor-pointer overflow-hidden rounded-[15px] 
+                md:absolute md:right-0 md:bottom-1/2'
       onClick={handleClick}>
       <p className='text-white whitespace-nowrap'>Присоеденись к нам:</p>
       {expanded && (

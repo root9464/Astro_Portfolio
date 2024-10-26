@@ -3,13 +3,13 @@ import Layout from '@/layouts/_layout.astro';
 ---
 
 <Layout title='Projects'>
-  <div class='w-full h-uiMinHeight flex flex-col items-center gap-y-10'>
-    <div class='w-10/12 h-max rounded-uiRounded py-7 px-7 border-2 border-uiNeutral grid grid-cols-2 gap-x-5'>
+  <div class='w-full h-max flex flex-col items-center gap-y-10 md:h-uiMinHeight'>
+    <div class='w-full h-max rounded-uiRounded py-7 px-7 border-2 border-uiNeutral grid grid-cols-1 gap-4 md:grid-cols-2 md:w-10/12'>
       <form class='max-w-[904px] h-max flex flex-col items-center gap-5'>
-        <input type='text' placeholder='your name' />
-        <input type='email' placeholder='your email' />
-        <input type='text' placeholder='your password' />
-        <button type='submit'>Send</button>
+        <input type='text' placeholder='your name' class='rounded-[10px]' />
+        <input type='email' placeholder='your email' class='rounded-[10px]' />
+        <input type='text' placeholder='your password' class='rounded-[10px]' />
+        <button type='submit' class='rounded-[10px]'>Send</button>
       </form>
       <div class='w-full space-y-3'>
         <p class='text-4xl font-bold'>Unlock Exclusive Access!</p>

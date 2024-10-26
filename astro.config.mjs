@@ -15,11 +15,17 @@ export default defineConfig({
     port: 3000,
     host: true,
   },
+  devToolbar: {
+    enabled: false,
+  },
   integrations: [
     tailwind({
       configFile: './tailwind.config.ts',
       nesting: true,
+      applyBaseStyles: false,
     }),
-    react(),
+    react({
+      experimentalReactChildren: true,
+    }),
   ],
 });

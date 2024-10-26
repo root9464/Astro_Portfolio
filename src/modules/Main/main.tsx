@@ -28,13 +28,16 @@ export const Main = () => {
   ];
 
   useEffect(() => {
+    const isMobile = window.matchMedia('(max-width: 768px)').matches;
+    const xOffset = isMobile ? 10 : 50;
+
     gsap.from(leftHeadings.current, {
-      x: (index) => index * 50,
+      x: (index) => index * xOffset,
       ...staticParamsAnimate,
     });
 
     gsap.from(rightLinks.current, {
-      x: (index) => index * 50,
+      x: (index) => index * xOffset,
       ...staticParamsAnimate,
     });
   }, []);
@@ -43,7 +46,10 @@ export const Main = () => {
     <div className='w-full h-uiMinHeight relative'>
       <div className='text-4xl font-semibold'>
         {['I’m a web3.0 frontend developer', 'and game developer', 'telegram mini apps/dapps creator'].map((text, index) => (
-          <h1 key={index} ref={(el) => (leftHeadings.current[index] = el)} style={{ marginLeft: `${index * 50}px` }}>
+          <h1
+            key={index}
+            ref={(el) => (leftHeadings.current[index] = el)}
+            style={{ marginLeft: `${window.matchMedia('(max-width: 768px)').matches ? index * 10 : index * 50}px` }}>
             {text}
           </h1>
         ))}
@@ -55,7 +61,7 @@ export const Main = () => {
             key={index}
             ref={(el) => (rightLinks.current[index] = el)}
             href={link.url}
-            style={{ marginLeft: `${index * 50}px`, display: 'block' }}>
+            style={{ marginLeft: `${window.matchMedia('(max-width: 768px)').matches ? index * 10 : index * 50}px`, display: 'block' }}>
             {link.text}
           </a>
         ))}
