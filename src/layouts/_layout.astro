@@ -1,0 +1,23 @@
+---
+import Header from '@modules/Header/header.astro';
+import '@styles/global.styles.css';
+
+type Props = {
+  title: string;
+};
+const { title }: Props = Astro.props;
+---
+
+<html lang='en'>
+  <head>
+    <meta charset='UTF-8' />
+    <meta name='viewport' content='width=device-width, initial-scale=1.0' />
+    <title>{title}</title>
+  </head>
+  <body>
+    <Header />
+    <main class='h-fit w-[calc(100%*0.9)] mx-auto my-6 p-4 bg-transparent'>
+      <slot />
+    </main>
+  </body>
+</html>

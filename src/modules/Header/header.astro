@@ -1,0 +1,37 @@
+---
+import { LogoGradient } from '@/assets/tsx/logo';
+
+const pages: Record<string, string> = {
+  '/': 'Home',
+  '/about/': 'About',
+  '/blog/': 'Blog',
+  '/contact/': 'Contact',
+  '/projects/': 'Projects',
+  '/resume/': 'Resume',
+  '/auth/': 'Auth',
+};
+
+const currentPath = Astro.url.pathname;
+---
+
+<header class='bg-transparent w-9/12 h-20 m-auto px-10 flex items-center justify-between rounded-bl-[30px] rounded-br-[30px]'>
+  <LogoGradient className='w-20 h-20' />
+
+  <nav class='w-min flex flex-row justify-between items-center space-x-4 text-xl font-medium gap-x-3'>
+    {
+      Object.entries(pages).map(([path, name]) => (
+        <div class='group'>
+          <a
+            href={path}
+            class={`transition-all duration-300 ease-in-out 
+              ${currentPath === path ? 'bg-gradient-to-r from-[#BC3CD8] to-[#C54B8C] bg-clip-text text-transparent' : 'text-white'}
+              group-hover:bg-clip-text group-hover:text-transparent 
+              group-hover:bg-gradient-to-r group-hover:from-[#BC3CD8] 
+              group-hover:to-[#C54B8C]`}>
+            {name}
+          </a>
+        </div>
+      ))
+    }
+  </nav>
+</header>

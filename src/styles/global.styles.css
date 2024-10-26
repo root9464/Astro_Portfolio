@@ -1,0 +1,43 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    font-family: 'Inter', sans-serif;
+  }
+
+  body {
+    @apply no-underline w-full min-h-screen bg-uiBackground text-white;
+  }
+}
+
+@layer components {
+  .gradient {
+    background: linear-gradient(99deg, #BC3CD8 0%, #C54B8C 100%);
+  }
+}
+
+/* Ширина скроллбара */
+body::-webkit-scrollbar {
+  background: #C0C2C7;
+  width: 5px;
+}
+
+/* Трек скроллбара */
+body::-webkit-scrollbar-track {
+  background: #C0C2C7;
+  margin: 5px 0;
+  /* Отступы сверху и снизу, чтобы уменьшить высоту */
+}
+
+/* Ползунок скроллбара */
+body::-webkit-scrollbar-thumb {
+  background: #FFFFFF;
+  border-radius: 5px;
+}
+
+/* Ползунок при наведении */
+body::-webkit-scrollbar-thumb:hover {
+  background: #EFEFF4;
+}
