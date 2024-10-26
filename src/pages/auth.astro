@@ -1,0 +1,26 @@
+---
+import Layout from '@/layouts/_layout.astro';
+---
+
+<Layout title='Projects'>
+  <div class='w-full h-uiMinHeight flex flex-col items-center gap-y-10'>
+    <div class='w-10/12 h-max rounded-uiRounded py-7 px-7 border-2 border-uiNeutral grid grid-cols-2 gap-x-5'>
+      <form class='max-w-[904px] h-max flex flex-col items-center gap-5'>
+        <input type='text' placeholder='your name' />
+        <input type='email' placeholder='your email' />
+        <input type='text' placeholder='your password' />
+        <button type='submit'>Send</button>
+      </form>
+      <div class='w-full space-y-3'>
+        <p class='text-4xl font-bold'>Unlock Exclusive Access!</p>
+        <p>Join our community by registering today and gain exclusive access to my latest projects and resources. As a member, you will:</p>
+        <ul class='list-disc list-inside'>
+          <li>Explore innovative web3.0 solutions and decentralized applications.</li>
+          <li>Stay updated on the latest trends in blockchain technology and game development.</li>
+          <li>Network with like-minded individuals and collaborate on exciting ventures.</li>
+          <li>Receive personalized insights and support tailored to your interests.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</Layout>

@@ -10,6 +10,15 @@
   body {
     @apply no-underline w-full min-h-screen bg-uiBackground text-white;
   }
+
+  input,
+  textarea {
+    @apply bg-uiNeutral rounded-lg px-4 py-2 w-full outline-none
+  }
+
+  button {
+    @apply bg-uiNeutral rounded-lg px-4 py-2 w-full text-white
+  }
 }
 
 @layer components {

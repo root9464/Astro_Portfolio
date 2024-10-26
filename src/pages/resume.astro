@@ -1,0 +1,82 @@
+---
+import Layout from '@/layouts/_layout.astro';
+
+// Define interfaces for the content structure
+interface ContentSection {
+  title?: string;
+  text?: string;
+  items?: string[];
+}
+
+interface Content {
+  intro: ContentSection;
+  frontendTechnologies: ContentSection;
+  gameDevelopment: ContentSection;
+  backendTechnologies: ContentSection;
+  programmingLanguages: ContentSection;
+}
+
+// Create the content object with defined structure
+const content: Content = {
+  intro: {
+    text: 'As a dedicated Frontend Developer with two years of experience in the Web3 sector, I specialize in building dynamic, scalable applications within the TON blockchain ecosystem. My technical expertise spans modern JavaScript frameworks, advanced animation libraries, and containerization, providing me with a well-rounded skill set tailored for both web-based DApps and games. I also bring hands-on experience with Telegram Mini Apps and DApps, where I optimize user experience and frontend performance to meet the demands of decentralized environments.',
+  },
+  frontendTechnologies: {
+    title: 'Frontend Technologies:',
+    items: [
+      'React: Developed numerous applications using React, implementing component-based architecture to enhance code reusability and maintainability. Proficient in hooks, context API, and performance optimization techniques.',
+      'GSAP & Framer Motion: Utilized GSAP and Framer Motion to create smooth animations and transitions, significantly improving the overall user experience and engagement on web applications.',
+      'Tailwind CSS & Styled-Components: Applied Tailwind CSS and Styled-Components for efficient styling, enabling rapid prototyping while maintaining a consistent design system across various projects.',
+      'Telegram Mini Apps: Developed Telegram Mini Apps using React, utilizing hooks, context API, and performance optimization techniques to optimize user experience. This included implementing custom components, state management, and responsive design principles to enhance user experience.',
+      'GraphQL: Expertise in utilizing GraphQL for efficient data fetching and management on the frontend, allowing for more flexible and responsive applications within the web3 ecosystem.',
+    ],
+  },
+  gameDevelopment: {
+    title: 'Game Development:',
+    items: [
+      'PixiJS: Leveraged PixiJS for developing interactive 2D games, focusing on performance optimization and user interaction. This included implementing sprite animations, game physics, and responsive design principles to enhance gameplay experiences.',
+    ],
+  },
+  backendTechnologies: {
+    title: 'Backend and Infrastructure Technologies:',
+    items: [
+      'Nginx: Configured Nginx for serving web applications and managing load balancing, resulting in improved application performance and security.',
+      'Docker: Utilized Docker for containerizing applications, ensuring consistency across development and production environments, thus streamlining deployment processes.',
+      'Prisma & Axios: Implemented Prisma for database interactions and Axios for API requests, optimizing data management and retrieval processes within applications.',
+      'Telegram Bot API: Implemented Telegram Bot API integration for Telegram Mini Apps, enhancing user experience and functionality.',
+      'gRPC: Proficient in gRPC for building efficient and scalable APIs, enhancing communication between microservices and improving overall system performance.',
+      'Kafka: Experience with Apache Kafka for building real-time data pipelines and streaming applications, ensuring reliable data processing and integration across distributed systems.',
+    ],
+  },
+  programmingLanguages: {
+    title: 'Programming Languages:',
+    items: [
+      'Proficient in JavaScript and TypeScript for frontend development, with additional experience in Go and Rust for backend applications. This diverse skill set allows for a more holistic approach to software development.',
+    ],
+  },
+};
+---
+
+<Layout title='Projects'>
+  <div class='w-full h-max flex flex-col items-center gap-y-10'>
+    <div class='w-10/12 h-max rounded-uiRounded py-7 px-7 border-2 border-uiNeutral flex flex-col space-y-3'>
+      <p>{content.intro.text}</p>
+
+      {
+        Object.entries(content).map(([key, { title, items }]) => {
+          if (title && items)
+            return (
+              <div>
+                <p class='font-bold text-2xl'>{title}</p>
+                <ul class='list-disc list-inside pl-5 mb-4 space-y-3'>
+                  {items.map((item: string, index: number) => (
+                    <li>{item}</li>
+                  ))}
+                </ul>
+              </div>
+            );
+        })
+      }
+    </div>
+  </div>
+</Layout>

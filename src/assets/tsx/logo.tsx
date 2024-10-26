@@ -21,8 +21,8 @@ export const LogoGradient: FC<LogoProps> = ({ className }) => (
     />
     <defs>
       <linearGradient id='paint0_linear_103_217' x1='1.04828' y1='-2.44078' x2='510.262' y2='119.162' gradientUnits='userSpaceOnUse'>
-        <stop stop-color='#BC3CD8' />
-        <stop offset='1' stop-color='#C54B8C' />
+        <stop stopColor='#BC3CD8' />
+        <stop offset='1' stopColor='#C54B8C' />
       </linearGradient>
     </defs>
   </svg>

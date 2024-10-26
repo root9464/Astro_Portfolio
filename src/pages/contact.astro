@@ -1,0 +1,28 @@
+---
+import Layout from '@/layouts/_layout.astro';
+---
+
+<Layout title='Home'>
+  <div class='w-full h-uiMinHeight flex flex-col items-center gap-y-10'>
+    <h2 class='text-4xl font-bold'>If you need me — contact me.</h2>
+    <div class='max-w-[904px] h-max rounded-uiRounded py-7 px-8 border-2 border-uiNeutral grid grid-cols-2 gap-x-5'>
+      <form action='' class='w-full flex flex-col gap-y-4 justify-between'>
+        <input type='text' placeholder='your name' />
+        <input type='email' placeholder='your email' />
+        <textarea placeholder='your message'></textarea>
+        <button type='submit'>Send</button>
+      </form>
+      <div class='w-full flex flex-col gap-y-4 space-3'>
+        <p>
+          I’m always excited to connect with fellow enthusiasts! If you have any questions, suggestions, or just want to chat, don’t hesitate to
+          reach out. Whether you're interested in my projects, looking for collaboration opportunities, or simply want to discuss the latest in
+          blockchain technology, I’d love to hear from you.
+        </p>
+        <p>
+          Your thoughts and feedback are really important to me, and I'm eager to engage in meaningful conversations. So go ahead and drop me a
+          message—let’s explore the possibilities together!
+        </p>
+      </div>
+    </div>
+  </div>
+</Layout>
