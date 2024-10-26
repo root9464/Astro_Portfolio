@@ -1,69 +1,88 @@
 ---
 import Layout from '@/layouts/_layout.astro';
+import { BlogLink } from '@modules/Blog/blog';
+const topics: Record<string, string>[] = [
+  {
+    title: 'In-Depth Tutorials',
+    description: `
+          n-Depth Tutorials: I’ll cover various aspects of blockchain development, from smart contract creation to integrating decentralized
+          applications (DApps). Whether you’re a beginner looking to learn the basics or an experienced developer seeking advanced techniques, my
+          tutorials are designed to provide valuable insights and practical knowledge.
+       `,
+  },
+  {
+    title: 'Updates on Dexlot',
+    description: `
+          Updates on Dexlot: Stay informed about the latest developments and features of Dexlot. I’ll share updates on new functionalities,
+          improvements, and how our team is continually enhancing the user experience. Your feedback is essential, and we aim to create a
+          platform that meets the needs of our users.
+        `,
+  },
+  {
+    title: 'Market Analysis and Trading Strategies',
+    description: `
+          Market Analysis and Trading Strategies: As someone deeply involved in trading, I will provide market analysis and share effective
+          trading strategies that can help you navigate the ever-changing landscape of cryptocurrency markets. Learn how to leverage delayed
+          orders to your advantage and maximize your trading potential.
+        `,
+  },
+  {
+    title: 'Exploration of Web3 Trends',
+    description: `
+          Exploration of Web3 Trends: The web3 space is constantly evolving, and I’m committed to exploring the latest trends, technologies, and
+          innovations that are shaping the future of decentralized finance (DeFi). I’ll discuss new protocols, tools, and developments that can
+          help you stay ahead in this dynamic environment.
+      `,
+  },
+  {
+    title: 'Community Engagement',
+    description: `
+          Community Engagement: I believe in the power of community and collaboration. Through my blog, I hope to connect with fellow developers,
+          traders, and enthusiasts who share a passion for blockchain technology. I encourage discussions, questions, and sharing of ideas, as we
+          all learn and grow together.  
+      `,
+  },
+];
+
+const introduction: string[] = [
+  `
+    Welcome to my blog! I am a dedicated developer in the web 3 space, currently working with TaigaLabs, a talented team focused on building
+    innovative blockchain solutions. My passion for decentralized technologies drives my commitment to creating products that enhance user
+    experiences and revolutionize the way we interact with the digital world.
+  `,
+  `
+    One of our standout projects at TaigaLabs is Dexlot, a cutting-edge decentralized exchange (DEX) designed specifically for delayed order
+    trading. Dexlot empowers users to place orders at their desired price points, providing the flexibility to optimize their trading
+    strategies without the immediate pressures often associated with traditional platforms. This unique approach allows traders to execute
+    trades when market conditions align with their objectives.
+  `,
+  `
+    In my blog, I share insights and experiences related to my journey as a web3 developer and the innovative work being done at TaigaLabs.
+    Here’s what you can expect to find:
+  `,
+];
+
+const blogData = {
+  introduction: introduction,
+  topics: topics,
+};
 ---
 
 <Layout title='Blog'>
+  <BlogLink client:load />
   <div class='w-full h-uiMinHeight flex flex-col items-center gap-y-10'>
     <h2 class='text-4xl font-bold'>My company blog</h2>
     <div class='w-10/12 h-max rounded-uiRounded py-7 px-8 border-2 border-uiNeutral'>
-      <p>
-        Welcome to my blog! I am a dedicated developer in the web 3 space, currently working with TaigaLabs, a talented team focused on building
-        innovative blockchain solutions. My passion for decentralized technologies drives my commitment to creating products that enhance user
-        experiences and revolutionize the way we interact with the digital world.
-      </p>
+      {blogData.introduction.map((text) => <p class='mb-4'>{text}</p>)}
 
-      <p>
-        One of our standout projects at TaigaLabs is Dexlot, a cutting-edge decentralized exchange (DEX) designed specifically for delayed order
-        trading. Dexlot empowers users to place orders at their desired price points, providing the flexibility to optimize their trading
-        strategies without the immediate pressures often associated with traditional platforms. This unique approach allows traders to execute
-        trades when market conditions align with their objectives.
-      </p>
-
-      <p>
-        In my blog, I share insights and experiences related to my journey as a web3 developer and the innovative work being done at TaigaLabs.
-        Here’s what you can expect to find:
-      </p>
-
-      <ul>
-        <li>
-          <p>
-            In-Depth Tutorials: I’ll cover various aspects of blockchain development, from smart contract creation to integrating decentralized
-            applications (DApps). Whether you’re a beginner looking to learn the basics or an experienced developer seeking advanced techniques,
-            my tutorials are designed to provide valuable insights and practical knowledge.
-          </p>
-        </li>
-
-        <li>
-          <p>
-            Updates on Dexlot: Stay informed about the latest developments and features of Dexlot. I’ll share updates on new functionalities,
-            improvements, and how our team is continually enhancing the user experience. Your feedback is essential, and we aim to create a
-            platform that meets the needs of our users.
-          </p>
-        </li>
-
-        <li>
-          <p>
-            Market Analysis and Trading Strategies: As someone deeply involved in trading, I will provide market analysis and share effective
-            trading strategies that can help you navigate the ever-changing landscape of cryptocurrency markets. Learn how to leverage delayed
-            orders to your advantage and maximize your trading potential.
-          </p>
-        </li>
-
-        <li>
-          <p>
-            Exploration of Web3 Trends: The web3 space is constantly evolving, and I’m committed to exploring the latest trends, technologies,
-            and innovations that are shaping the future of decentralized finance (DeFi). I’ll discuss new protocols, tools, and developments that
-            can help you stay ahead in this dynamic environment.
-          </p>
-        </li>
-
-        <li>
-          <p>
-            Community Engagement: I believe in the power of community and collaboration. Through my blog, I hope to connect with fellow
-            developers, traders, and enthusiasts who share a passion for blockchain technology. I encourage discussions, questions, and sharing
-            of ideas, as we all learn and grow together.
-          </p>
-        </li>
+      <ul class='list-disc list-inside pl-5 mb-4'>
+        {
+          blogData.topics.map((topic) => (
+            <li class='mb-2'>
+              <strong>{topic.title}:</strong> {topic.description}
+            </li>
+          ))
+        }
       </ul>
     </div>
   </div>
