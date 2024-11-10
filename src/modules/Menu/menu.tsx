@@ -30,9 +30,9 @@ export const DropdownMenuPages: FC<MenuProps> = ({ pages }) => {
         <DropdownMenuRadioGroup value={position} onValueChange={setPosition}>
           {Object.entries(pages).map(([key, value]) => (
             <DropdownMenuItem key={key} className='hover:bg-pink-300 rounded-[10px]'>
-              <DropdownMenuItem>
-                <a href={key}>{value}</a>
-              </DropdownMenuItem>
+              <a href={key} className='w-full p-1 '>
+                {value}
+              </a>
             </DropdownMenuItem>
           ))}
         </DropdownMenuRadioGroup>
